@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import program from 'commander';
+import gendiff from '..';
 
 program
   .version('1.0.0')
@@ -7,6 +8,6 @@ program
   .arguments('<firstConfig> <secondConfig>')
   .option('-f, --format [type] ', 'Output format')
   .action((firstPath, secondPath) => {
-    console.log(`Test gendiff ${firstPath} ${secondPath}`);
+    gendiff(firstPath, secondPath);
   })
   .parse(process.argv);
